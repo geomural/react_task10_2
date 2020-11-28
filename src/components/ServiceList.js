@@ -9,13 +9,11 @@ function ServiceList() {
   const [items, setItems] = useState(storedItems);
 
   useEffect(() => {
-    console.log("++++++++++++++++++++=useEffect filteredItems", filteredItems);
-    
-    let itemsToSet =  filteredItems.isFilter > 0 ? filteredItems.filteredItems : storedItems;  
+    //для перерендера при изменении списка отфильтрованных записей
+    let itemsToSet =  filteredItems.filterText ? filteredItems.filteredItems : storedItems;  
     setItems(itemsToSet);
-    console.log("items after useEffect", items);
     return;
-  }, [filteredItems, storedItems])
+  }, [filteredItems])
 
   const handleRemove = id => {
     dispatch(removeService(id));

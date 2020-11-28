@@ -19,8 +19,9 @@ function ServiceAdd() {
 		} else {
 			//добавление нового
 			dispatch(addService(item.name, item.price));	
-		}		
-		dispatch(cleanCurrentService());		
+		}
+		//очистка полей ввода
+		dispatch(cleanCurrentService());	
 	}
 
 	const cancel = evt => {

@@ -3,7 +3,7 @@ import {CLEAN_CURRENT_SERVICE, EDIT_SERVICE, CHANGE_SERVICE_FIELD} from '../acti
 const initialState = {
   name: '',
   price: '',
-  id: false //false if not edit, <id> if edit
+  id: false //id при режиме редактирования, иначе false
 };
 
 export default function serviceAddReducer(state = initialState, action) {

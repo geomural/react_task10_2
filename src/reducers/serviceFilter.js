@@ -1,21 +1,19 @@
 import {FILTER_SERVICE} from '../actions/actionTypes'
 
 const initialState = { filteredItems: [],
-                       isFilter: false };
+                       filterText: false }; //текст, по которому производится фильтрация
 
 export default function serviceFilterReducer(state = initialState, action) {
   switch (action.type) {
     case FILTER_SERVICE:
-      console.log("serviceFilterReducer action.payload", action.payload)
       const {items, value} = action.payload;
+      //если фильтр не установлен
       if (!value) {
-        return { filteredItems: items, isFilter: false };
+        return { filteredItems: items, filterText: false };
       }
-      console.log("items", items);
-      console.log("value", value);
+      //ищем подходящие значения
       let data = items.filter(service => service.name.match(value) ? service : null);
-      console.log("data", data);
-      return { filteredItems: data, isFilter: true };
+      return { filteredItems: data, filterText: value };         
     default:
       return state;
   }
