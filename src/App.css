@@ -1,0 +1,22 @@
+.editBtn {
+  width: 26px;
+  height: 26px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.penImg {
+  width: 160%;;  
+}
+
+li {
+  margin-top: 10px;
+}
+
+.filterDiv {
+  margin-top: 10px;
+}
+
+.filterSpan {
+  margin-right: 10px;
+}
